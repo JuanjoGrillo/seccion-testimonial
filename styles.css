@@ -1,0 +1,205 @@
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --heavy-violet: hsl(263, 93%, 34%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);  
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --heavy-light-blue: rgb(47, 200, 190);
+    --soft-light-blue: rgb(188, 245, 226);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--soft-light-blue);
+}
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+.seccionTestimonial {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 2rem 1.6rem;
+    font-size: 1.2rem;
+    gap: 1.6rem;
+}
+article {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    border-radius: 1.2rem;
+    padding: 1.6rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.box-1 {
+    background-color: var(--moderate-violet);
+}
+.box-2 {
+    background-color: var(--very-dark-grayish-blue);
+}
+.box-3 {
+    background-color: var(--white);
+}
+.box-4 {
+    background-color: var(--white);
+}
+.box-5 {
+    background-color: var(--very-dark-blackish-blue);
+}   
+.box-1 {
+    position: relative;
+}
+.box-1::before {
+    content: open-quote;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 32rem;
+    position: absolute;
+    color: white;
+    opacity: 32%;
+    right: 6.4rem;
+    top: -6rem;
+}
+.references {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+.references__text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.6rem;
+    height: inherit;
+}
+.references__text__title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    flex-grow: 1; 
+}
+.references__text__subTitle {
+    flex-grow: 1; 
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.references__media img {
+    width: 3.6rem;
+    border-radius: 3.6rem;
+}
+.box-1 .references__media img {
+    border: 0.2rem solid var(--heavy-violet);
+}
+.box-5 .references__media img {
+    border: 0.2rem solid var(--moderate-violet);
+}
+.box-1 .references__text,
+.box-2 .references__text,
+.box-5 .references__text {
+    color: var(--white);
+}
+.box-3 .references__text,
+.box-4 .references__text {
+    color: var(--very-dark-grayish-blue);
+}
+.contentHead {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 1.6rem 0;
+}
+.contentBody {
+    font-size: 1.6rem;
+    opacity: 60%;
+    font-weight: 500;
+}
+.box-1 p,
+.box-2 p,
+.box-5 p {
+    color: var(--white);
+}
+.box-3 p,
+.box-4 p{
+    color: var(--very-dark-grayish-blue);
+}
+.references__text__subTitle {
+    opacity: 50%;
+}
+footer {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    background-color: var(--heavy-light-blue);
+    height: 6rem;
+}
+footer p {
+    margin-left: 1.2rem;
+}
+a,
+a:visited,
+a:active,
+a:focus {
+    color: blue;
+    text-decoration: none;
+}
+@media screen and (min-width: 769px) {
+    .seccionTestimonial {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        width: 90%;
+        margin: 4rem auto;
+        gap: 2.4rem;
+    }
+    article {
+        padding: 2rem 2.8rem;
+    }
+    .box-3 {
+        grid-column: span 2;
+    }
+    .box-1::before {
+        font-size: 40rem;
+    }
+    .references__text__title {
+        font-size: 1.8rem;
+    }
+    .references__text__subTitle {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (min-width: 1025px){
+    .seccionTestimonial {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+    article {
+        padding: 2.4rem 3.2rem;
+    }
+    .box-2 .references,
+    .box-3 .references,
+    .box-4 .references {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 8rem;
+    }
+    .box-1 {
+        grid-column: span 2;
+    }
+    .box-3 {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+    .box-5 {
+        grid-column: span 2;
+    }   
+}
